@@ -1,5 +1,5 @@
-from main import db
 from brands.brand_model import Brand
+from main import db
 
 class BrandsService:
     def __init__(self):
@@ -11,7 +11,7 @@ class BrandsService:
         return brands
 
     def create_brand(self, brand_title):
-        brand = self.Item(brand_title = brand_title)
+        brand = self.Brand(brand_title = brand_title)
         try:
             db.session.add(brand)
             db.session.commit()

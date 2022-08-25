@@ -7,7 +7,7 @@ def base_regestry(app):
 
     @app.route('/')
     def index():
-        devices = devices_seervice.get_all_devicess()
+        devices = devices_seervice.get_all_devices()
         return render_template('index.html')
         #return render_template('index.html', devices = devices)
 

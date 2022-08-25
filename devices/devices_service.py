@@ -1,11 +1,11 @@
-from main import db
 from devices.devices_model import Device
+from main import db
 
 class DevicesService():
     def __init__(self):
         self.Device = Device
 
-    def get_all_devicess(self):
+    def get_all_devices(self):
         devices = self.Device.query.order_by(Device.price).all()
         return devices
 

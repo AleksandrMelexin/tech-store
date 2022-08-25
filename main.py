@@ -2,14 +2,16 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
-from app.src import base_regestry
-from devices.src import devices_registry
-from categories.src import categories_registry
-from brands.src import brands_registry
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
+
+from app.src import base_regestry
+from devices.src import devices_registry
+from categories.src import categories_registry
+from brands.src import brands_registry
 
 base_regestry(app)
 

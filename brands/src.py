@@ -5,7 +5,7 @@ def brands_registry(app):
     brands_service = BrandsService()
 
     @app.route('/brands')
-    def device(id):
+    def get_brands(id):
         return render_template('index.html')
            
     return app

@@ -1,4 +1,3 @@
-from tkinter.tix import COLUMN
 from main import db
 
 class Device(db.Model):

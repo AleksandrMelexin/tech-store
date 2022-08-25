@@ -1,5 +1,5 @@
-from main import db
 from categories.categories_model import Category
+from main import db
 
 class CategoriesService:
     def __init__(self):
@@ -11,7 +11,7 @@ class CategoriesService:
         return categories
 
     def create_brand(self, category_title):
-        category = self.Item(category_title = category_title)
+        category = self.Category(category_title = category_title)
         try:
             db.session.add(category)
             db.session.commit()

@@ -5,7 +5,7 @@ def devices_registry(app):
     devices_service = DevicesService()
 
     @app.route('/devices')
-    def device(id):
+    def get_devices(id):
         return render_template('index.html')
            
     return app
