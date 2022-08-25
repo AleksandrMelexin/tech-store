@@ -6,7 +6,7 @@ class CategoriesService:
         self.Category = Category
 
     
-    def get_all_categoriess(self):
+    def get_all_categories(self):
         categories = self.Category.query.order_by.all()
         return categories
 
