@@ -5,29 +5,18 @@ class AuthService:
         self.users_service = UsersService()
 
     
-    def login(self, email, password):
-        user = self.users_service.getUserByEmail(email)
+    def login(self, data):
+        user = self.users_service.getUserByEmail(data["email"])
         if not user:
             return False
-        if password != user.password:
+        if data["password"] != user.password:
             return False
         return user
 
-    def registration(self, email, password):
-        user = self.users_service.getUserByEmail(email)
+    def registration(self, data):
+        user = self.users_service.getUserByEmail(data["email"])
         if user:
             return False
-        if not self.users_service.createUser(email, password):
+        if not self.users_service.createUser(data["email"], data["password"]):
             return False
         return True
-
-
-    """ def create_brand(self, category_title):
-        category = self.Category(category_title = category_title)
-        try:
-            db.session.add(category)
-            db.session.commit()
-            return True
-        except BaseException as err:
-            print(err)
-            return False """
